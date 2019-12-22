@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
+	"github.com/acaloiaro/go-whosonfirst-pip-v2/app"
+	"github.com/acaloiaro/go-whosonfirst-pip-v2/flags"
+	"github.com/acaloiaro/go-whosonfirst-pip-v2/http"
 	"github.com/whosonfirst/go-http-mapzenjs"
 	"github.com/whosonfirst/go-http-rewrite"
-	"github.com/whosonfirst/go-whosonfirst-pip-v2/app"
-	"github.com/whosonfirst/go-whosonfirst-pip-v2/flags"
-	"github.com/whosonfirst/go-whosonfirst-pip-v2/http"
 	"log"
 	gohttp "net/http"
 	"os"

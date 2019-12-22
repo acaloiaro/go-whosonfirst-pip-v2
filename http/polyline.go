@@ -2,12 +2,12 @@ package http
 
 import (
 	"encoding/json"
+	"github.com/acaloiaro/go-whosonfirst-pip-v2"
+	"github.com/acaloiaro/go-whosonfirst-pip-v2/filter"
+	pip_index "github.com/acaloiaro/go-whosonfirst-pip-v2/index"
+	pip_utils "github.com/acaloiaro/go-whosonfirst-pip-v2/utils"
 	"github.com/skelterjohn/geom"
 	"github.com/whosonfirst/go-whosonfirst-index"
-	"github.com/whosonfirst/go-whosonfirst-pip-v2"
-	"github.com/whosonfirst/go-whosonfirst-pip-v2/filter"
-	pip_index "github.com/whosonfirst/go-whosonfirst-pip-v2/index"
-	pip_utils "github.com/whosonfirst/go-whosonfirst-pip-v2/utils"
 	"github.com/whosonfirst/go-whosonfirst-spr"
 	_ "log"
 	"math"

@@ -2,11 +2,11 @@ package app
 
 import (
 	"flag"
+	"github.com/acaloiaro/go-whosonfirst-pip-v2/cache"
+	"github.com/acaloiaro/go-whosonfirst-pip-v2/flags"
+	"github.com/acaloiaro/go-whosonfirst-pip-v2/index"
 	wof_index "github.com/whosonfirst/go-whosonfirst-index"
 	"github.com/whosonfirst/go-whosonfirst-log"
-	"github.com/whosonfirst/go-whosonfirst-pip-v2/cache"
-	"github.com/whosonfirst/go-whosonfirst-pip-v2/flags"
-	"github.com/whosonfirst/go-whosonfirst-pip-v2/index"
 	"github.com/whosonfirst/go-whosonfirst-sqlite/database"
 	"runtime/debug"
 	"time"

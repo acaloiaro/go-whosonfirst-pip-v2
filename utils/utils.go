@@ -3,11 +3,11 @@ package utils
 import (
 	"context"
 	"errors"
+	"github.com/acaloiaro/go-whosonfirst-pip-v2"
+	pip_index "github.com/acaloiaro/go-whosonfirst-pip-v2/index"
 	"github.com/skelterjohn/geom"
 	geojson_utils "github.com/whosonfirst/go-whosonfirst-geojson-v2/utils"
 	"github.com/whosonfirst/go-whosonfirst-index"
-	"github.com/whosonfirst/go-whosonfirst-pip-v2"
-	pip_index "github.com/whosonfirst/go-whosonfirst-pip-v2/index"
 	"github.com/whosonfirst/go-whosonfirst-spr"
 	"github.com/whosonfirst/go-whosonfirst-uri"
 	"io"

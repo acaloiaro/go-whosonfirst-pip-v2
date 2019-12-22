@@ -3,9 +3,9 @@ package app
 import (
 	"errors"
 	"flag"
-	"github.com/whosonfirst/go-whosonfirst-pip-v2/cache"
-	"github.com/whosonfirst/go-whosonfirst-pip-v2/flags"
-	"github.com/whosonfirst/go-whosonfirst-pip-v2/index"
+	"github.com/acaloiaro/go-whosonfirst-pip-v2/cache"
+	"github.com/acaloiaro/go-whosonfirst-pip-v2/flags"
+	"github.com/acaloiaro/go-whosonfirst-pip-v2/index"
 )
 
 func NewApplicationIndex(fl *flag.FlagSet, appcache cache.Cache) (index.Index, error) {

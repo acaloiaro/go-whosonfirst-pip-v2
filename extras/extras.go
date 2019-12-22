@@ -153,7 +153,7 @@ func AppendExtrasToSPRBytes(spr []byte, id string, extras []string, conn *sql.DB
 	// 2017/12/17 20:07:00 420561633 no such function: JSON_EXTRACT
 	// row := conn.QueryRow("SELECT JSON_EXTRACT(feature, '$.properties') FROM geojson WHERE id=?", id)
 
-	// see also: https://github.com/whosonfirst/go-whosonfirst-pip-v2/issues/19
+	// see also: https://github.com/acaloiaro/go-whosonfirst-pip-v2/issues/19
 
 	row := conn.QueryRow("SELECT body FROM geojson WHERE id=?", id)
 

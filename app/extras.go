@@ -4,7 +4,7 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"github.com/whosonfirst/go-whosonfirst-pip-v2/flags"
+	"github.com/acaloiaro/go-whosonfirst-pip-v2/flags"
 	"github.com/whosonfirst/go-whosonfirst-sqlite-features/tables"
 	"github.com/whosonfirst/go-whosonfirst-sqlite/database"
 	"io/ioutil"
@@ -86,7 +86,7 @@ func NewApplicationExtras(fl *flag.FlagSet) (*database.SQLiteDatabase, error) {
 	}
 
 	// see also:
-	// https://github.com/whosonfirst/go-whosonfirst-pip-v2/issues/19
+	// https://github.com/acaloiaro/go-whosonfirst-pip-v2/issues/19
 
 	_, err = tables.NewGeoJSONTableWithDatabase(db)
 

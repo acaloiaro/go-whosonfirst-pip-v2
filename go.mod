@@ -1,14 +1,18 @@
-module github.com/whosonfirst/go-whosonfirst-pip-v2
+module github.com/acaloiaro/go-whosonfirst-pip-v2
 
 go 1.13
 
 require (
+	github.com/dhconnelly/rtreego v1.0.0
 	github.com/elazarl/go-bindata-assetfs v1.0.0
 	github.com/google/pprof v0.0.0-20191218002539-d4f498aebedc // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/shaxbee/go-spatialite v0.0.0-20180425212100-9b4c81899e0e // indirect
+	github.com/skelterjohn/geom v0.0.0-20180103142417-96f3e8a219c5
 	github.com/tidwall/gjson v1.3.4
 	github.com/tidwall/sjson v1.0.4
+	github.com/whosonfirst/go-http-mapzenjs v0.0.0-20190722193037-4ed59e932ab4
+	github.com/whosonfirst/go-http-rewrite v0.0.0-20170922163152-18b1c50538dd
 	github.com/whosonfirst/go-whosonfirst-flags v0.1.0
 	github.com/whosonfirst/go-whosonfirst-geojson-v2 v0.12.0
 	github.com/whosonfirst/go-whosonfirst-index v0.1.2
