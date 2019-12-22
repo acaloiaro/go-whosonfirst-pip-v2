@@ -24,13 +24,25 @@
 # build phase - see also:
 # https://medium.com/travis-on-docker/multi-stage-docker-builds-for-creating-tiny-go-images-e0e1867efe5a
 # https://medium.com/travis-on-docker/triple-stage-docker-builds-with-go-and-angular-1b7d2006cb88
+# base image
+FROM alpine:3.11 AS build-env
 
-FROM golang:alpine AS build-env
+RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
+RUN echo "@edge-testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+
+RUN apk update && \
+  apk --no-cache --update upgrade musl && \
+  apk add --upgrade --force-overwrite apk-tools@edge && \
+  apk add --update --force-overwrite "xerces-c@community" "proj@community" "proj-datumgrid@community" \
+    "poppler@edge" "proj-dev@community" "geos@community" "geos-dev@community" "gdal-dev@community" \
+    "libspatialite@edge-testing" "libspatialite-dev@edge-testing" make libc-dev gcc go && \
+  rm -rf /var/cache/apk/*
 
 RUN apk add --update make libc-dev gcc
 
 ADD . /go-whosonfirst-pip-v2
-RUN cd /go-whosonfirst-pip-v2; make bin
+RUN cd /go-whosonfirst-pip-v2; make tools
 
 # what follows is a modified version of this:
 # https://github.com/terranodo/spatialite-docker/blob/master/Dockerfile
@@ -39,18 +51,15 @@ RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/reposito
 RUN echo "@edge-testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 RUN apk update
 
-RUN apk add wget gcc make libc-dev sqlite-dev zlib-dev libxml2-dev "proj4-dev@edge-testing" "geos-dev@edge-testing" "gdal-dev@edge-testing" "gdal@edge-testing" expat-dev readline-dev ncurses-dev ncurses-static libc6-compat
-
-RUN wget "http://www.gaia-gis.it/gaia-sins/freexl-sources/freexl-1.0.5.tar.gz" && tar zxvf freexl-1.0.5.tar.gz && cd freexl-1.0.5 && ./configure && make && make install
-
-RUN wget "http://www.gaia-gis.it/gaia-sins/libspatialite-4.3.0a.tar.gz" && tar zxvf libspatialite-4.3.0a.tar.gz && cd libspatialite-4.3.0a && ./configure && make && make install
+RUN apk add wget gcc make libc-dev sqlite-dev zlib-dev libxml2-dev  expat-dev readline-dev ncurses-dev ncurses-static libc6-compat
 
 RUN wget "http://www.gaia-gis.it/gaia-sins/readosm-1.1.0.tar.gz" && tar zxvf readosm-1.1.0.tar.gz && cd readosm-1.1.0 && ./configure && make && make install
 
-RUN wget "http://www.gaia-gis.it/gaia-sins/spatialite-tools-4.3.0.tar.gz" && tar zxvf spatialite-tools-4.3.0.tar.gz && cd spatialite-tools-4.3.0 && ./configure && make && make install
+RUN wget "http://www.gaia-gis.it/gaia-sins/spatialite-tools-4.3.0.tar.gz" && tar zxvf spatialite-tools-4.3.0.tar.gz && cd spatialite-tools-4.3.0 && ./configure --disable-freexl && make && make install
 
 RUN cp /usr/local/bin/* /usr/bin/
 RUN cp -R /usr/local/lib/* /usr/lib/
+RUN cp /go-whosonfirst-pip-v2/bin/* /usr/bin
 
 FROM alpine
 

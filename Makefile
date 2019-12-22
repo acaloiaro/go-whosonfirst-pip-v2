@@ -1,7 +1,8 @@
 fmt:
 	go fmt app/*.go
 	go fmt cache/*.go
-	go fmt cmd/*.go
+	go fmt cmd/wof-pip/*.go
+	go fmt cmd/wof-pip-server/*.go
 	go fmt extras/*.go
 	go fmt filter/*.go
 	go fmt flags/*.go
@@ -41,4 +42,4 @@ mapzenjs:
 	curl -s -o www/javascript/mapzen.min.js https://www.nextzen.org/js/mapzen.min.js
 
 crosshairs:
-	curl -s -o www/javascript/slippymap.crosshairs.js https://raw.githubusercontent.com/whosonfirst/js-slippymap-crosshairs/master/src/slippymap.crosshairs.js	
+	curl -s -o www/javascript/slippymap.crosshairs.js https://raw.githubusercontent.com/whosonfirst/js-slippymap-crosshairs/master/src/slippymap.crosshairs.js
