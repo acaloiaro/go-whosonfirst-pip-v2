@@ -154,7 +154,7 @@ type GeoJSONStandardPlacesResult struct {
 ```
 
 It is also possible to request GeoJSON formatted responses either by calling the
-[utils.ResultsToFeatureCollection() method](https://github.com/whosonfirst/go-whosonfirst-pip-v2/blob/master/utils/utils.go) in code or by passing in a
+[utils.ResultsToFeatureCollection() method](https://github.com/acaloiaro/go-whosonfirst-pip-v2'/blob/master/utils/utils.go) in code or by passing in a
 `?format=geojson` flag in an HTTP request (assuming that `wof-pip-server` has
 been started with the `-enable-geojson` flag).
 
@@ -353,7 +353,7 @@ bundled with this package. If the tools are invoked with the `-mode spatialite`
 flag then it will be understood that both the caching and indexing layers
 already exist and they will not be pre-populated. This is a piece of
 [package-specific helper
-code](https://github.com/whosonfirst/go-whosonfirst-pip-v2/blob/spatialite/app/pip.go#L82-L123)
+code](https://github.com/acaloiaro/go-whosonfirst-pip-v2'/blob/spatialite/app/pip.go#L82-L123)
 independent of the basic model for creating caches and indices._
 
 ### rtree
@@ -408,7 +408,7 @@ bundled with this package. If the tools are invoked with the `-mode spatialite`
 flag then it will be understood that both the caching and indexing layers
 already exist and they will not be pre-populated. This is a piece of
 [package-specific helper
-code](https://github.com/whosonfirst/go-whosonfirst-pip-v2/blob/spatialite/app/pip.go#L82-L123)
+code](https://github.com/acaloiaro/go-whosonfirst-pip-v2'/blob/spatialite/app/pip.go#L82-L123)
 independent of the basic model for creating caches and indices._
 
 ### fs
@@ -595,7 +595,7 @@ There are a few things to note about the example above:
 
 * See the way the name is still is
   `github.com/whosonfirst/go-whosonfirst-pip/...` even though this package is
-  called `github.com/whosonfirst/go-whosonfirst-pip-v2` ? That's unfortunate and
+  called `github.com/acaloiaro/go-whosonfirst-pip-v2'` ? That's unfortunate and
   something that we'll reconcile in the future...
 
 * See the way there is a `github.com/whosonfirst/go-whosonfirst-index` package

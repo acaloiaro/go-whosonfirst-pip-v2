@@ -1,4 +1,4 @@
-module github.com/whosonfirst/go-whosonfirst-pip-v2
+module github.com/acaloiaro/go-whosonfirst-pip-v2'
 
 go 1.13
 
